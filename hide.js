@@ -1,5 +1,5 @@
-function myFunction() {
-  var x = document.getElementById("myDIV");
+function hider() {
+  var x = document.getElementByClass("item");
   if (x.style.display === "none") {
     x.style.display = "block";
   } else {

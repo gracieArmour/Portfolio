@@ -50,9 +50,8 @@
 			}
 			nav {
 				text-align:right;
-				margin:0;
+				margin:-10px;
 				padding:0;
-				transform:translate(0,-10%);
 			}
 			.description {
 				width:50%;

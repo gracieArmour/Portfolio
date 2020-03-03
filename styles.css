@@ -25,7 +25,8 @@
     			#topbar {
     				background-color:#2b81d8;
 				color:#01ffff;
-            			margin:0;
+            			margin-top:0;
+				margin-bottom:10px;
             			width:100%;
 				height:40px;
 				padding-bottom:50px;
@@ -50,8 +51,7 @@
 			}
 			nav {
 				text-align:right;
-				padding-bottom:50px;
-				margin:10px;
+				padding-bottom:10px;
 			}
 			.description {
 				width:50%;

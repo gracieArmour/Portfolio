@@ -25,9 +25,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col items-center`}
       >
+        <a id="top" className=""></a>
+        <header className="sticky top-0 z-100 w-full bg-[#dddddd]">
+          <div className="text-xl m-[1em]">Gracie Armour's Portfolio</div>
+        </header>
+
         {children}
+
+        <footer className="w-full border-t-2">
+        </footer>
       </body>
     </html>
   );

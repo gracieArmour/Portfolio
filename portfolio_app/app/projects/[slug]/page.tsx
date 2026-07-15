@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import Link from "next/link";
 
 import { getProjects } from "@/lib/neonFunctions";
 
@@ -27,8 +28,11 @@ export default async function Games({
 
                     return (
                         <div key={entry.id} className="my-[1em]">
-                            <h2>{entry.name}</h2>
-                            <DemoComponent/>
+                            <Link className="hover:underline" href={entry.project_link} target="_blank" rel="noopener noreferrer"><h2>{entry.title}</h2></Link>
+                            <p><b>Language/Engine:</b> {entry.project_language}</p>
+                            {entry.made_for != "" ? <p><b>Made For:</b> {entry.made_for}</p> : <></>}
+                            {entry.collaborators != "" ? <p><b>Collaborators:</b> {entry.collaborators}</p> : <></>}
+                            {entry.demo != "" ? <DemoComponent/> : <></>}
                             <p>{entry.description}</p>
                         </div>
                     )

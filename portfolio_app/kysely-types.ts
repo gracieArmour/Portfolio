@@ -10,10 +10,14 @@ export type Generated<T> = T extends ColumnType<infer S, infer I, infer U>
   : ColumnType<T, T | undefined, T>;
 
 export interface Projects {
-  demo: string;
+  collaborators: Generated<string>;
+  demo: Generated<string>;
   description: string;
   id: Generated<number>;
-  name: string;
+  made_for: Generated<string>;
+  project_language: string;
+  project_link: Generated<string>;
+  title: string;
   type: string;
 }
 

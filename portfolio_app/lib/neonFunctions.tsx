@@ -8,7 +8,7 @@ export async function getProjects(type: string) {
     
     const response = await db
         .selectFrom('projects')
-        .select(['id', 'name', 'description', 'demo'])
+        .select(['id', 'title', 'project_link', 'project_language', 'description', 'demo', 'made_for', 'collaborators'])
         .where('type', '=', type)
         .execute()
     

@@ -18,8 +18,8 @@ export default async function Games({
         const data = await getProjects(slug);
 
     return (
-        <main className="flex flex-col items-center sm:w-2/3 px-[2em]">
-            <h1>{toTitleCase(slug)} Development</h1>
+        <main className="flex flex-col items-center sm:w-[640px] px-[2em]">
+            <h1 className="mb-[3rem]">{toTitleCase(slug)} Development</h1>
             <ul className="w-full">
                 {data.map((entry) => {
                     const DemoComponent = dynamic(() =>
@@ -29,7 +29,7 @@ export default async function Games({
                     );
 
                     return (
-                        <div key={entry.id} className="mb-[5em]">
+                        <div key={entry.id} className="mb-[5em] w-full">
                             <div className="flex flex-row justify-start items-center mb-[1rem]">
                                 <h2 className="mr-[1rem] mb-0">{entry.title}</h2>
                                 <Link className="underline hover:no-underline" href={entry.project_link} target="_blank" rel="noopener noreferrer">

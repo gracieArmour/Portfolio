@@ -1,7 +1,9 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import Image from "next/image";
 
 import { getProjects } from "@/lib/neonFunctions";
+import OpenLinkIcon from "@/public/images/icons/open-link-svgrepo-com.svg";
 
 function toTitleCase(input: string) {
     return input[0].toUpperCase() + input.slice(1)
@@ -27,8 +29,17 @@ export default async function Games({
                     );
 
                     return (
-                        <div key={entry.id} className="my-[1em]">
-                            <Link className="hover:underline" href={entry.project_link} target="_blank" rel="noopener noreferrer"><h2>{entry.title}</h2></Link>
+                        <div key={entry.id} className="mb-[5em]">
+                            <div className="flex flex-row justify-start items-center mb-[1rem]">
+                                <h2 className="mr-[1rem] mb-0">{entry.title}</h2>
+                                <Link className="underline hover:no-underline" href={entry.project_link} target="_blank" rel="noopener noreferrer">
+                                    <Image
+                                        className="object-contain h-[var(--text-3xl)] w-auto"
+                                        src={OpenLinkIcon}
+                                        alt="open link icon"
+                                    />
+                                </Link>
+                            </div>
                             <p><b>Language/Engine:</b> {entry.project_language}</p>
                             {entry.made_for != "" ? <p><b>Made For:</b> {entry.made_for}</p> : <></>}
                             {entry.collaborators != "" ? <p><b>Collaborators:</b> {entry.collaborators}</p> : <></>}

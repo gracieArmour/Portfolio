@@ -10,6 +10,7 @@ export async function getProjects(type: string) {
         .selectFrom('projects')
         .select(['id', 'title', 'project_link', 'project_language', 'description', 'demo', 'made_for', 'collaborators'])
         .where('type', '=', type)
+        .orderBy('id','asc')
         .execute()
     
     pool.end()

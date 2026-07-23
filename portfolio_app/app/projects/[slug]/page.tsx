@@ -43,7 +43,7 @@ export default async function Games({
                             <p><b>Language/Engine:</b> {entry.project_language}</p>
                             {entry.made_for != "" ? <p><b>Made For:</b> {entry.made_for}</p> : <></>}
                             {entry.collaborators != "" ? <p><b>Collaborators:</b> {entry.collaborators}</p> : <></>}
-                            {entry.demo != "" ? <DemoComponent/> : <></>}
+                            {entry.demo != "" ? <div className="my-[1rem]"><DemoComponent/></div> : <></>}
                             <p>{entry.description}</p>
                         </div>
                     )
